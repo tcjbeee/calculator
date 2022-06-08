@@ -7,7 +7,7 @@ body {
     flex-direction: column;
     background-color: rgb(228, 228, 228);
     border-radius: 20px;
-    height: 800px;
+    height: 1000px;
     width: 600px;
     align-items: center;
 }
@@ -34,6 +34,7 @@ body {
     justify-content: center;
     height: 600px;
     width: 500px;
+    gap: 50px;
 }
 
 .numberContainer {
@@ -41,13 +42,13 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     height: 400px;
-    width: 300px;
-    padding-right: 50px;
+    width: 400px;
+    gap: 5px;
 }
 
 .functionContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 h1 {
@@ -63,6 +64,11 @@ button {
     font-size: 35px;
     border-color: rgb(55, 125, 253);
     border-width: 8px;
+}
+
+.functionContainer button {
+    background-color: rgb(13, 98, 255);
+    border-color: rgb(13, 98, 255);;
 }
 
 #button0 {
