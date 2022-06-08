@@ -30,10 +30,7 @@ function operate() {
     input2 = Math.floor(input2);
     cleared = false;
     if (operator.innerHTML == "+") {
-        console.log(input1);
-        console.log(input2);
         add(input1, input2);
-        console.log(result);
     }
     else if (operator.innerHTML == "-") {
         subtract(input1, input2);
@@ -56,6 +53,8 @@ equalsButton = document.querySelector("#equalsButton");
 
 currentResult = document.querySelector(".result");
 
+calculation = document.querySelector(".calculation");
+
 clearButton.addEventListener("click", function reset() {
     input1 = 0;
     input2 = 0;
@@ -63,6 +62,7 @@ clearButton.addEventListener("click", function reset() {
     operatorClicked = false;
     resultGot = false;
     cleared = false;
+    calculation.innerHTML = "";
 })
 
 numberButtonPressed.forEach((button) =>
@@ -74,22 +74,26 @@ function appendButtonPress() {
 
     if (currentResult.innerHTML == 0) {
         currentResult.innerHTML = buttonClicked.innerHTML;
+        calculation.innerHTML = calculation.innerHTML + buttonClicked.innerHTML;
     }
 
     else if (resultGot == true && cleared == false) {
         currentResult.innerHTML = "";
         cleared = true;
         currentResult.innerHTML = (currentResult.innerHTML + buttonClicked.innerHTML);
+        calculation.innerHTML = calculation.innerHTML + buttonClicked.innerHTML;
     }
 
     else if (operatorClicked == true && cleared == false) {
         currentResult.innerHTML = "";
         cleared = true;
         currentResult.innerHTML = (currentResult.innerHTML + buttonClicked.innerHTML);
+        calculation.innerHTML = calculation.innerHTML + buttonClicked.innerHTML;
     }
 
     else {
     currentResult.innerHTML = (currentResult.innerHTML + buttonClicked.innerHTML);
+    calculation.innerHTML = calculation.innerHTML + buttonClicked.innerHTML;
     }
 }
 
@@ -106,13 +110,13 @@ function storeOperator() {
         input1 = currentResult.innerHTML;
         operatorClicked = true;
         input1 = currentResult.innerHTML;
+        calculation.innerHTML = calculation.innerHTML + " " + operator.innerHTML + " ";
     }
 
     else {
         input2 = currentResult.innerHTML;
         operate();
         result = result.toString();
-        console.log(result);
         currentResult.innerHTML = result;
         resultGot = true;
         operatorClicked = false;

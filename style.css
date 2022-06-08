@@ -1,30 +1,49 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     background-color: rgb(228, 228, 228);
-    border-radius: 20px;
+    border-radius: 50px;
+    border-style: outset;
+    border-width: 10px;
+    border-color: rgb(150, 150, 150);
     height: 1050px;
     width: 600px;
     align-items: center;
 }
 
 .resultScreen {
-    background-color: white;
+    font-family: monospace;
+    background-color: rgb(64, 206, 94);;
+    color: rgb(1, 80, 18);
     width: 600px;
     height: 100px;   
     border-radius: 20px;
+    border-color: rgb(150, 150, 150);
+    border-width: 10px;
+    border-style: inset;
     display: flex;
-    justify-content: end;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .result {
     font-size: 40px;
     padding-right: 20px;
+}
+
+.calculation {
+    font-size: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
 }
 
 .calcContainer {
@@ -53,18 +72,19 @@ body {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 40px;
 }
 
 button {
     border-radius: 300px;
+    border-style: ridge;
     height: 100px;
     width: 100px;
     color: white;
     background-color: rgb(55, 125, 253);
     font-size: 35px;
     border-color: rgb(55, 125, 253);
-    border-width: 8px;
+    border-width: 6px;
 }
 
 .functionContainer button {
